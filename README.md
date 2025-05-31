@@ -1,4 +1,3 @@
-  GNU nano 8.4                                                                                               README.md                                                                                                Modified  
 # 🐧 NixOS Flake Configuration – mac-nixos
 
 This repository contains my personal and minimalist NixOS configuration, managed with Flakes and Home Manager.
@@ -33,13 +32,14 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 └── README.md
 ```
 
-
 ## 🚀 Usage
 
 ### Apply system config:
 
+> [!CAUTION]
+> Needs to be run as `mac`
 ```bash
-sudo nixos-rebuild switch --flake .#mac-nixos
+nixupdate
 ```
 
 # 🔧 TODO
