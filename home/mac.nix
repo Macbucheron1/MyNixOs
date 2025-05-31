@@ -15,8 +15,6 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = false;
-    autosuggestions.enable = false;
   };
 
   home.stateVersion = "24.05";
