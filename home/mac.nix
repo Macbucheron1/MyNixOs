@@ -2,20 +2,15 @@
   home.username = "mac";
   home.homeDirectory = "/home/mac";
 
-  home.packages = with pkgs; [ 
-    zsh 
+  imports = [
+    ./modules/shell.nix # Contains Zsh and Starship configuration
   ];
 
   programs.git = {
     enable = true;
     userName = "Macbucheron1";
-    userEmail = "nathan@example.com";
+    userEmail = "nathandeprat@hotmai.fr";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-  };
-
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 }
