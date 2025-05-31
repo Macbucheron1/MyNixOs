@@ -47,10 +47,11 @@ nixupdate
 - [x] Integrate `zsh` with `starship` prompt
 - [ ] Install some kind of fetch to look cool
 - [ ] Add a gui
-  - [ ] Hyprland as the Window Manager
+  - [x] Hyprland as the Window Manager
+  - [ ] Adding FR keyboard layout for hyprland
   - [ ] Waybar as the status bar
   - [ ] Wofi or as Launcher
-  - [ ] Alacritty as terminal
+  - [x] Alacritty as terminal
 - [ ] Rice `starship` prompt
 - [ ] Rice tf out of this
 
