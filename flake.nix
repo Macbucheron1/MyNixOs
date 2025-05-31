@@ -1,5 +1,4 @@
-  GNU nano 8.4                                                                                               flake.nix                                                                                                Modified  
-{
+ {
   description = "Flake minimal pour Mac-NixOS avec Home Manager";
 
   inputs = {
