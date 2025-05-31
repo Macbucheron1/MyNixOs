@@ -44,12 +44,13 @@ nixupdate
 
 # 🔧 TODO
 
-- [ ] Integrate `zsh` with `starship` prompt
+- [x] Integrate `zsh` with `starship` prompt
 - [ ] Install some kind of fetch to look cool
 - [ ] Add a gui
   - [ ] Hyprland as the Window Manager
   - [ ] Waybar as the status bar
   - [ ] Wofi or as Launcher
   - [ ] Alacritty as terminal
+- [ ] Rice `starship` prompt
 - [ ] Rice tf out of this
 
