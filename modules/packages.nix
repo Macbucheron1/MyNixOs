@@ -3,6 +3,7 @@
     wget
     curl
     git
+    zsh
   ];
 
   programs.firefox.enable = true;

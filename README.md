@@ -1,6 +1,7 @@
+  GNU nano 8.4                                                                                               README.md                                                                                                Modified  
 # 🐧 NixOS Flake Configuration – mac-nixos
 
-This repository contains my personal and minimalist NixOS configuration, managed with Flakes and Home Manager. 
+This repository contains my personal and minimalist NixOS configuration, managed with Flakes and Home Manager.
 It's designed to be modular, versioned, and reproducible — ideal for development, pentesting, and customization.
 
 ## 🧩 Features
@@ -12,21 +13,24 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 
 ## 📁 Structure
 
-```
+```shell
 .
-├── flake.nix
-├── flake.lock
-├── hardware-configuration.nix
+├── flake.nix  # Entry point of the NixOs flake system. Defines inputs and system configuration
+├── flake.lock # Same but generated so do not touch
+├── hardware-configuration.nix # Auto generated file that declares disk/boot/hardware setup
 ├── hosts/
-│ └── mac-nixos.nix
-├── modules/
+│ └── mac-nixos.nix  # system config of the machine. Import system modules
+├── modules/  # NixOs systemm modules
 │ ├── network.nix
 │ ├── nix.nix
 │ ├── openssh.nix
 │ ├── packages.nix
 │ └── user-mac.nix
-└── home/
-└── mac.nix
+├── home # Home manager configuration
+│   ├── mac.nix # Configuration for the user mac
+│   └── modules # User specific modules. Since there is only mac there are all for mac
+│       └── shell.nix
+└── README.md
 ```
 
 
