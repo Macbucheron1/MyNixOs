@@ -5,7 +5,7 @@
   imports = [
     ./modules/shell.nix # Contains Zsh and Starship configuration
     ./modules/gui.nix
-    ./modules/hyprland_config.nix
+    ./modules/hyprland.nix
   ];
 
   programs.git = {
