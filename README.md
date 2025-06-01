@@ -34,8 +34,11 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 │   ├── mac.nix                 # Home Manager entry point for user "mac", importing user-level modules
 │   └── modules/                # Modules specific to the user "mac"
 │       ├── gui.nix             # GUI-related tools and packages (launchers, themes, etc.)
-│       ├── hyprland_config.nix # User-specific Hyprland settings (config file, bindings, etc.)
 │       └── shell.nix           # Shell configuration (Zsh, Starship, aliases, etc.)
+│
+├── wallpapers/                 # Static assets used as backgrounds or themes
+│   ├── basic.png
+│   └── extended.png
 │ 
 └── README.md                   # Project documentation and development notes
 ```
