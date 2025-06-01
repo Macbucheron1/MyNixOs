@@ -15,13 +15,21 @@
           sudo nixos-rebuild switch --flake /etc/nixos#mac-nixos;
         fi
       '';
-
+        
       nixtest = ''
-        echo "🔍 Testing system flake build..." &&
-        nix build /etc/nixos#nixosConfigurations.mac-nixos.config.system.build.toplevel &&
-        echo "🔍 Testing home-manager switch (dry-run)..." &&
-        home-manager switch --flake /etc/nixos#mac --dry-run &&
-        echo "✅ All tests passed."
+        echo "🔍 Testing system flake build (without root)..."
+        nix build /etc/nixos#nixosConfigurations.mac-nixos.config.system.build.toplevel -o /tmp/nixos-test-build || {
+          echo "❌ System flake build failed.";
+          return 1;
+        }
+          
+        echo "🔍 Testing home-manager switch (dry-run)..."
+        home-manager switch --flake /etc/nixos#mac --dry-run || {
+          echo "❌ Home-manager dry-run failed.";
+          return 1;
+        }
+                    
+        echo "✅ All flake checks passed. Ready to commit and deploy!";
       '';
     };
   };
