@@ -14,22 +14,30 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 
 ```shell
 .
-├── flake.nix  # Entry point of the NixOs flake system. Defines inputs and system configuration
-├── flake.lock # Same but generated so do not touch
-├── hardware-configuration.nix # Auto generated file that declares disk/boot/hardware setup
+├── flake.nix                   # Entry point for the NixOS flake system. Declares inputs and output configurations.
+├── flake.lock                  # Auto-generated lock file that pins all dependencies (do not edit manually).
+├── hardware-configuration.nix # Auto-generated hardware setup: disks, bootloader, file systems, etc.
+│ 
 ├── hosts/
-│ └── mac-nixos.nix  # system config of the machine. Import system modules
-├── modules/  # NixOs systemm modules
-│ ├── network.nix
-│ ├── nix.nix
-│ ├── openssh.nix
-│ ├── packages.nix
-│ └── user-mac.nix
-├── home # Home manager configuration
-│   ├── mac.nix # Configuration for the user mac
-│   └── modules # User specific modules. Since there is only mac there are all for mac
-│       └── shell.nix
-└── README.md
+│   └── mac-nixos.nix           # System configuration specific to the host "mac-nixos". Imports system-level modules.
+│ 
+├── modules/                    # System-level NixOS modules
+│   ├── home-manager.nix        # Declares and integrates the home-manager module at the system level
+│   ├── hyprland.nix            # Enables and configures Hyprland at the system level (window manager, drivers, etc.)
+│   ├── network.nix             # Configures networking (e.g. NetworkManager)
+│   ├── nix.nix                 # Core Nix and flakes-related configuration
+│   ├── openssh.nix             # OpenSSH server settings
+│   ├── packages.nix            # Global system packages (environment.systemPackages)
+│   └── user-mac.nix            # System-level configuration for the "mac" user (shell, groups, etc.)
+│ 
+├── home/                       # Home Manager configuration (user-level)
+│   ├── mac.nix                 # Home Manager entry point for user "mac", importing user-level modules
+│   └── modules/                # Modules specific to the user "mac"
+│       ├── gui.nix             # GUI-related tools and packages (launchers, themes, etc.)
+│       ├── hyprland_config.nix # User-specific Hyprland settings (config file, bindings, etc.)
+│       └── shell.nix           # Shell configuration (Zsh, Starship, aliases, etc.)
+│ 
+└── README.md                   # Project documentation and development notes
 ```
 
 ## 🚀 Usage
