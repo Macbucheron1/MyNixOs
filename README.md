@@ -48,7 +48,7 @@ nixupdate
 - [ ] Install some kind of fetch to look cool
 - [ ] Add a gui
   - [x] Hyprland as the Window Manager
-  - [ ] Adding FR keyboard layout for hyprland
+  - [x] Adding FR keyboard layout for hyprland
   - [ ] Waybar as the status bar
   - [ ] Wofi or as Launcher
   - [x] Alacritty as terminal
