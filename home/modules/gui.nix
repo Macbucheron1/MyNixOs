@@ -7,7 +7,9 @@
   # Hypaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = /etc/nixos/wallpapers/basic.png
-    wallpaper = , /etc/nixos/wallpapers/basic.png
+    preload = /etc/nixos/wallpapers/extended.png
+    wallpaper = eDP-1, /etc/nixos/wallpapers/basic.png
+    wallpaper = , /etc/nixos/wallpapers/extended.png
   '';
 
 
