@@ -4,6 +4,7 @@
     curl
     git
     zsh
+    tree
   ];
 
   programs.firefox.enable = true;
