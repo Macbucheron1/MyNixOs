@@ -3,6 +3,9 @@
     enable = true;
     settings = {
       exec-once = [ "alacritty" ];
+      
+      input = {
+        kb_layout = "fr";
     };
   };
 }
