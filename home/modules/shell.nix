@@ -35,6 +35,10 @@
     };
   };
 
-  home.packages = with pkgs; [ zsh starship ];
+  home.packages = with pkgs; [ 
+    zsh 
+    starship
+    wdisplays 
+  ];
 }
 
