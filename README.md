@@ -34,6 +34,14 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 
 ## 🚀 Usage
 
+### Test the build of current config 
+
+> [!CAUTION]
+> Needs to be run as `mac`
+```bash 
+nixtest
+```
+
 ### Apply system config:
 
 > [!CAUTION]
