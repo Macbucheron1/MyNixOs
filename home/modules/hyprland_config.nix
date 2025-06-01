@@ -6,6 +6,7 @@
       
       input = {
         kb_layout = "fr";
+      };
     };
   };
 }
