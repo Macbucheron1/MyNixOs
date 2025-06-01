@@ -11,7 +11,8 @@
     ./../modules/packages.nix
     ./../modules/openssh.nix
     ./../modules/nix.nix
-    ./../modules/hyprland.nix
+    ./../modules/hyprland.nix 
+    ./../modules/home-manager.nix
   ];
 
   console = {
