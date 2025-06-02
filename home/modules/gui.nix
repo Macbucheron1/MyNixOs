@@ -63,6 +63,17 @@
       misc = {
         disable_hyprland_logo = true;
       };
+
+      bind = [
+        "SUPER, RETURN, exec, alacritty"
+        "SUPER, Q, killactive"
+        "SUPER, V, togglefloating"
+      ];
+
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+      ];
     };
   };
 }
