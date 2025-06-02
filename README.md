@@ -79,3 +79,7 @@ nixupdate
     - [ ] use [this](wallpaper for theme)
 - [ ] Rice tf out of this
 
+# 🧰 Ressources
+
+- https://github.com/accmeboot/dotfiles
+- https://github.com/Aylur/dotfiles
