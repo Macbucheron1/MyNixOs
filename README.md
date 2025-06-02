@@ -75,5 +75,7 @@ nixupdate
 - [ ] Configure hyprland
   - [ ] Add a display manager to launch on hyprland
   - [ ] Discover and configure styling options
+  - [ ] Add hyprpaper for wallpaper
+    - [ ] use [this](wallpaper for theme)
 - [ ] Rice tf out of this
 
