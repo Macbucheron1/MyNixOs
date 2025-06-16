@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     alacritty
-    hyprpaper
   ];
 
   # Hypaper configuration
@@ -12,6 +11,28 @@
     wallpaper = , ${../../wallpapers/extended.png}
   '';
 
+  # Service utilisateur pour hyprpaper
+  services.hyprpaper = {
+    enable = true;
+    package = pkgs.hyprpaper;
+    # La configuration est lue à partir du fichier défini dans xdg.configFile ci-dessus
+  };
+
+  # Service utilisateur pour Alacritty (auto-démarrage)
+  systemd.user.services.alacritty = {
+    Unit = {
+      Description = "Alacritty Terminal";
+      After = "graphical-session.target";
+      PartOf = "graphical-session.target";
+    };
+    Service = {
+      ExecStart = "${pkgs.alacritty}/bin/alacritty";
+      Restart = "on-failure";
+    };
+    Install = {
+      WantedBy = ["graphical-session.target"];
+    };
+  };
 
   wayland.windowManager.hyprland = {
     # Activate hyprland's configuration
@@ -21,13 +42,6 @@
 
     # Hyprland's configuration
     settings = {
-
-      # Lance alacritty (terminal) au lancement
-      exec-once = [ 
-        "alacritty"
-        "hyprpaper" 
-      ];
-
       # Raccourci clavier
       bind =[
         "SUPER, RETURN, exec, alacritty" # Open terminal
