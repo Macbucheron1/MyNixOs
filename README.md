@@ -17,10 +17,10 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 ├── flake.nix                   # Entry point for the NixOS flake system. Declares inputs and output configurations.
 ├── flake.lock                  # Auto-generated lock file that pins all dependencies (do not edit manually).
 ├── hardware-configuration.nix # Auto-generated hardware setup: disks, bootloader, file systems, etc.
-│ 
+│
 ├── hosts/
 │   └── mac-nixos.nix           # System configuration specific to the host "mac-nixos". Imports system-level modules.
-│ 
+│
 ├── modules/                    # System-level NixOS modules
 │   ├── home-manager.nix        # Declares and integrates the home-manager module at the system level
 │   ├── hyprland.nix            # Enables and configures Hyprland at the system level (window manager, drivers, etc.)
@@ -29,7 +29,7 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 │   ├── openssh.nix             # OpenSSH server settings
 │   ├── packages.nix            # Global system packages (environment.systemPackages)
 │   └── user-mac.nix            # System-level configuration for the "mac" user (shell, groups, etc.)
-│ 
+│
 ├── home/                       # Home Manager configuration (user-level)
 │   ├── mac.nix                 # Home Manager entry point for user "mac", importing user-level modules
 │   └── modules/                # Modules specific to the user "mac"
@@ -39,17 +39,18 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 ├── wallpapers/                 # Static assets used as backgrounds or themes
 │   ├── basic.png
 │   └── extended.png
-│ 
+│
 └── README.md                   # Project documentation and development notes
 ```
 
 ## 🚀 Usage
 
-### Test the build of current config 
+### Test the build of current config
 
 > [!CAUTION]
 > Needs to be run as `mac`
-```bash 
+
+```bash
 nixtest
 ```
 
@@ -57,8 +58,23 @@ nixtest
 
 > [!CAUTION]
 > Needs to be run as `mac`
+
 ```bash
 nixupdate
+```
+
+### Manage system storage
+
+The system is configured with an automatic garbage collector that runs weekly and removes generations older than 7 days.
+
+You can manually clean unused NixOS generations with:
+
+```bash
+# Clean user profile generations
+nix-clean
+
+# Clean all system generations (requires sudo)
+nix-clean-all
 ```
 
 # 🔧 TODO
