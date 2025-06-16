@@ -83,3 +83,4 @@ nixupdate
 
 - https://github.com/accmeboot/dotfiles
 - https://github.com/Aylur/dotfiles
+- [Terminal qui est super beau](https://media.discordapp.net/attachments/1184471801271681035/1380267291954122833/Screenshot_2025-06-05_at_16.29.22.png?ex=68434196&is=6841f016&hm=44c6020be508a4662bb06a2d068d0f0c2772310205e93cf04164a58b5dda909e&=&format=webp&quality=lossless)
