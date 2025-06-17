@@ -69,7 +69,7 @@ let
     label = [
       # Horloge ➜ rafraîchie chaque seconde
       {
-        text        = "{time:%H:%M:%S}";
+        text        = "$TIME";
         font_family = font;
         font_size   = 45;
         color       = "rgb(200, 200, 200)";
@@ -78,7 +78,7 @@ let
 
       # Date ➜ rafraîchie toutes les ~10 secondes automatiquement
       {
-        text        = "{date:%A, %d %B %Y}";
+        text        = ''cmd[update:10000] echo "$(date +"%A, %d %B %Y")"'';
         font_family = font;
         font_size   = 20;
         color       = "rgb(200, 200, 200)";
