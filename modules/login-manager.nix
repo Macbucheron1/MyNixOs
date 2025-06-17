@@ -1,52 +1,39 @@
-# Configuration du gestionnaire de connexion SDDM pour Hyprland
+# configuration.nix (ou ton module flake)
 { pkgs, ... }:
 
 let
-  # Ton fond d’écran, embarqué dans le dépôt NixOS
-  myWallpaper = ./wallpapers/hacker_nix.png;
-
-  # Palette dérivée du pixel-art
-  bgColor       = "#0A0E24";  # fond très sombre bleu-nuit
-  cyanAccent    = "#03A9C0";  # cyan / turquoise (écrans & logo)
-  magentaHover  = "#FF2E88";  # rose néon (survol, yeux, clavier)
-  goldHighlight = "#E6B43E";  # or patiné (casque, icônes)
+  myWallpaper = ./wallpapers/hacker_nix.png;   # chemin vers ton PNG
 in
 {
-  ## 1. SDDM + Wayland
   services.xserver.enable = true;
 
   services.displayManager = {
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "catppuccin-hack";          # nom final du thème
-      settings.Theme = {
-        CursorTheme = "Bibata-Modern-Ice";  # curseur clair dans la même gamme
-      };
+      # suffixe = flavor choisi ci-dessous
+      theme = "catppuccin-mocha";
+      settings.Theme.CursorTheme = "Bibata-Modern-Ice";
     };
     defaultSession = "hyprland";
   };
 
-  ## 2. Paquets nécessaires + thème Catppuccin surchargé
   environment.systemPackages = with pkgs; [
     libsForQt5.breeze-icons
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtsvg
 
-    # Thème SDDM recoloré : "catppuccin-hack"
+    # ▶︎ Thème Catppuccin modifié
     (catppuccin-sddm.override {
-      flavor         = "mocha";            # base sombre
-      background     = myWallpaper;
-      primaryColor   = cyanAccent;         # boutons & champs actifs
-      secondaryColor = magentaHover;       # couleur de survol
-      accentColor    = goldHighlight;      # sliders, cases cochées…
-      font           = "JetBrainsMono Nerd Font";
-      fontSize       = "10";               # légèrement plus grand
+      flavor          = "mocha";          # base sombre
+      background      = myWallpaper;      # pixel-art
+      loginBackground = true;             # fond aussi sur l’écran de mot de passe
+      font            = "JetBrainsMono Nerd Font";
+      fontSize        = "10";
     })
   ];
 
-  ## 3. Clavier & polkit
   services.xserver.xkb.layout = "fr";
-  security.polkit.enable = true;
+  security.polkit.enable       = true;
 }
