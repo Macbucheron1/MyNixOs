@@ -86,9 +86,9 @@
     };
   };
   
-  # S'assurer que la police nécessaire est installée
+  # S'assurer que la police nécessaire est installée (nouvelle syntaxe)
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
   ];
 
   # Configuration de Hyprland pour utiliser Hyprlock au démarrage
