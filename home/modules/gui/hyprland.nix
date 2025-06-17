@@ -24,6 +24,11 @@
       input = {
         kb_layout = "fr";
       };
+      
+      # Lancement automatique des applications
+      exec-once = [
+        "waybar" # Lancer Waybar au démarrage
+      ];
     };
 
     # --------- End Hyprland's rice ---------
