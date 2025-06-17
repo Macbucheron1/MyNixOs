@@ -2,7 +2,7 @@
 { pkgs, ... }: {
   # Configuration de SDDM pour un login graphique
   services.xserver = {
-    enable = true;            # Nécessaire pour le DisplayManager même en Wayland
+    enable = true;  # Nécessaire pour le DisplayManager même en Wayland
     displayManager = {
       sddm = {
         enable = true;

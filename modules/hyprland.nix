@@ -14,7 +14,6 @@
     xwayland.enable =  true;
   };
 
-  services.xserver.enable = false; # assure qu'on ne démarre pas X11
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # support Wayland pour Electron/Chromium apps
   };
