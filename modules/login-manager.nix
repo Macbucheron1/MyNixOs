@@ -3,22 +3,22 @@
   # Configuration de SDDM pour un login graphique
   services.xserver = {
     enable = true;  # Nécessaire pour le DisplayManager même en Wayland
-    displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true;  # Activer le support Wayland
-        theme = "breeze";       # Utiliser un thème disponible par défaut
-        settings = {
-          Theme = {
-            CursorTheme = "Adwaita";  # Thème de curseur standard disponible
-          };
+  };
+  
+  # Utiliser les nouveaux chemins d'options pour le gestionnaire d'affichage
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      wayland.enable = true;  # Activer le support Wayland
+      theme = "breeze";       # Utiliser un thème disponible par défaut
+      settings = {
+        Theme = {
+          CursorTheme = "Adwaita";  # Thème de curseur standard disponible
         };
       };
-      # Définir Hyprland comme session par défaut
-      defaultSession = "hyprland";
     };
-    # Désactiver le serveur X lui-même (on utilise juste le displayManager)
-    autorun = false;
+    # Définir Hyprland comme session par défaut
+    defaultSession = "hyprland";
   };
 
   # Installation des paquets nécessaires pour SDDM avec un thème adéquat
