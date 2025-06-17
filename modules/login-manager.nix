@@ -2,7 +2,7 @@
 { pkgs, ... }:
 
 let
-  myWallpaper = ./wallpapers/hacker_nix.png;   # chemin vers ton PNG
+  myWallpaper = ../wallpapers/basic.png;   # chemin vers ton PNG
 in
 {
   services.xserver.enable = true;
