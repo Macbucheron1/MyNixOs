@@ -130,7 +130,7 @@ let
     # === Image de profil ===
     image = [
       {
-        path = "${../../../wallpapers/basic.png}";  # Utiliser une image (optionnel)
+        path = "${../../../pictures/pp_marvin_300x300.jpg}";  # Utiliser une image (optionnel)
         size = 100;                              # Taille en pixels
         position = "0, -270";                    # Position en haut
         halign = "center";
