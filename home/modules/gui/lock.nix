@@ -76,13 +76,13 @@ let
         size = "240, 60";                        # Taille du champ
         outline_thickness = 3;                   # Épaisseur de la bordure
         outline_color = "rgba(151, 151, 151, 1)"; # Couleur externe
-        inner_color = "rgba(0, 0, 0, 0.2)";      # Couleur interne semi-transparente
+        inner_color = "rgba(200, 200, 200, 0.2)";      # Couleur interne semi-transparente
         font_color = "rgba(200, 200, 200, 1)";   # Couleur du texte
         dots_size = 0.33;                        # Taille des points
         dots_spacing = 0.15;                     # Espacement entre les points
         dots_center = true;                      # Centrer les points
         fade_on_empty = true;                    # Fondu quand le champ est vide
-        placeholder_text = "<i>Mot de passe...</i>"; # Texte indicatif
+        placeholder_text = "<i>Password...</i>"; # Texte indicatif
         hide_input = false;                      # Ne pas masquer la saisie
         position = "0, -100";                    # Position (centré, légèrement vers le haut)
         halign = "center";                       # Alignement horizontal
