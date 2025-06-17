@@ -100,9 +100,9 @@ nix-clean-all
   - [x] Alacritty as terminal
 - [ ] Rice `starship` prompt
 - [ ] Configure hyprland
-  - [ ] Add a display manager to launch on hyprland
+  - [x] Add a greetd and hyprlock for login
   - [ ] Discover and configure styling options
-  - [ ] Add hyprpaper for wallpaper
+  - [x] Add hyprpaper for wallpaper
     - [ ] use [this](wallpaper for theme)
 - [ ] Rice tf out of this
 
