@@ -75,7 +75,7 @@ let
       {
         size = "240, 60";                        # Taille du champ
         outline_thickness = 3;                   # Épaisseur de la bordure
-        outline_color = "rgba(151, 151, 151, 1)"; # Couleur externe
+        outline_color = "rgb(46, 46, 46)"; # Couleur externe
         inner_color = "rgba(200, 200, 200, 0.2)";      # Couleur interne semi-transparente
         font_color = "rgba(200, 200, 200, 1)";   # Couleur du texte
         dots_size = 0.33;                        # Taille des points
