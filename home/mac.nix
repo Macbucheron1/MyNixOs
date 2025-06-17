@@ -3,8 +3,10 @@
   home.homeDirectory = "/home/mac";
 
   imports = [
-    ./modules/shell.nix # Contains Zsh and Starship configuration
-    ./modules/gui.nix
+    ./modules/shell # Importe ./modules/shell/default.nix qui importe tous les sous-modules shell
+    ./modules/gui   # Importe ./modules/gui/default.nix qui importe tous les sous-modules gui
+    ./modules/development # Pour de futurs modules de développement
+    ./modules/media # Pour de futurs modules multimédias
   ];
 
   programs.git = {

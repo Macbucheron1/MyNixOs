@@ -16,7 +16,7 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 .
 ├── flake.nix                   # Entry point for the NixOS flake system. Declares inputs and output configurations.
 ├── flake.lock                  # Auto-generated lock file that pins all dependencies (do not edit manually).
-├── hardware-configuration.nix # Auto-generated hardware setup: disks, bootloader, file systems, etc.
+├── hardware-configuration.nix  # Auto-generated hardware setup: disks, bootloader, file systems, etc.
 │
 ├── hosts/
 │   └── mac-nixos.nix           # System configuration specific to the host "mac-nixos". Imports system-level modules.
@@ -25,7 +25,7 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 │   ├── home-manager.nix        # Declares and integrates the home-manager module at the system level
 │   ├── hyprland.nix            # Enables and configures Hyprland at the system level (window manager, drivers, etc.)
 │   ├── network.nix             # Configures networking (e.g. NetworkManager)
-│   ├── nix.nix                 # Core Nix and flakes-related configuration
+│   ├── nix.nix                 # Core Nix and flakes-related configuration, includes garbage collector
 │   ├── openssh.nix             # OpenSSH server settings
 │   ├── packages.nix            # Global system packages (environment.systemPackages)
 │   └── user-mac.nix            # System-level configuration for the "mac" user (shell, groups, etc.)
@@ -33,8 +33,19 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 ├── home/                       # Home Manager configuration (user-level)
 │   ├── mac.nix                 # Home Manager entry point for user "mac", importing user-level modules
 │   └── modules/                # Modules specific to the user "mac"
-│       ├── gui.nix             # GUI-related tools and packages (launchers, themes, etc.)
-│       └── shell.nix           # Shell configuration (Zsh, Starship, aliases, etc.)
+│       ├── development/        # Development tools and configurations
+│       │   └── default.nix     # Entry point for development modules
+│       ├── gui/                # GUI-related configurations, split into submodules
+│       │   ├── default.nix     # Entry point importing all GUI modules
+│       │   ├── hyprland.nix    # Hyprland window manager configuration
+│       │   ├── terminal.nix    # Alacritty terminal configuration with systemd service
+│       │   └── wallpaper.nix   # Hyprpaper wallpaper service configuration
+│       ├── media/              # Media-related tools and configurations
+│       │   └── default.nix     # Entry point for media modules
+│       └── shell/              # Shell configurations, split into submodules
+│           ├── default.nix     # Entry point importing all shell modules
+│           ├── starship.nix    # Starship prompt configuration
+│           └── zsh.nix         # Zsh shell configuration with aliases
 │
 ├── wallpapers/                 # Static assets used as backgrounds or themes
 │   ├── basic.png
