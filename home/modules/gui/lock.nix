@@ -1,96 +1,80 @@
 { pkgs, lib, config, inputs, ... }: 
 
 {
-  # Activer Hyprlock (verrouillage d'écran pour Hyprland)
-  programs.hyprlock = {
-    enable = true;
+  # Nous n'activons pas le module hyprlock intégré à Home Manager pour éviter les collisions
+  # Nous utilisons uniquement le binaire du flake et configurons manuellement
+  xdg.configFile."hypr/hyprlock.conf".text = ''
+    # Configuration générale
+    general {
+      disable_loading_bar = false
+      hide_cursor = true
+      grace = 0
+      no_fade_in = false
+    }
     
-    # Configuration du verrouillage d'écran
-    settings = {
-      # Configuration générale
-      general = {
-        disable_loading_bar = false;          # Afficher une barre de chargement
-        hide_cursor = true;                   # Masquer le curseur en mode verrouillé
-        grace = 0;                            # Pas de période de grâce (demande immédiatement le mot de passe)
-        no_fade_in = false;                   # Animation de fondu à l'entrée
-      };
+    # Configuration du fond d'écran de verrouillage
+    background {
+      path = ${lib.escapeShellArg "${../../../wallpapers/basic.png}"}
+      color = rgba(25, 20, 20, 1.0)
       
-      # Configuration du fond d'écran de verrouillage
-      background = {
-        path = lib.mkDefault "${../../../wallpapers/basic.png}";  # Utiliser le même fond d'écran que Hyprland
-        color = "rgba(25, 20, 20, 1.0)";                         # Couleur de fond si l'image ne se charge pas
-        
-        # Effets visuels sur le fond d'écran
-        blur_passes = 2;                      # Nombre de passes de flou (0 = pas de flou)
-        blur_size = 7;                        # Taille du flou
-        noise = 0.0117;                       # Effet de bruit léger
-        brightness = 0.8;                     # Réduire la luminosité
-        vibrancy = 0.1;                       # Légère vibrance
-        vibrancy_darkness = 0.0;              # Pas d'assombrissement supplémentaire
-      };
-      
-      # Configuration du champ de saisie
-      input_field = {
-        size = 200;                           # Taille du champ en pixels
-        outline_thickness = 3;                # Épaisseur de la bordure
-        dots_size = 0.33;                     # Taille des points (caractères masqués)
-        dots_spacing = 0.15;                  # Espacement entre les points
-        dots_center = true;                   # Centrer les points
-        outer_color = "rgb(151, 151, 151)";   # Couleur externe
-        inner_color = "rgb(200, 200, 200)";   # Couleur interne
-        font_color = "rgb(10, 10, 10)";       # Couleur de texte
-        fade_on_empty = true;                 # Fondu quand le champ est vide
-        placeholder_text = "<i>Mot de passe...</i>"; # Texte indicatif
-        hide_input = false;                   # Ne pas masquer la saisie
-        position = {                          # Position du champ
-          x = 0;
-          y = -60;
-        };
-      };
-      
-      # Texte d'horloge
-      clock = {
-        format = "%H:%M:%S";                  # Format de l'heure (HH:MM:SS)
-        font_size = 45;                       # Taille de police
-        font_family = "JetBrainsMono Nerd Font"; # Police
-        color = "rgb(200, 200, 200)";         # Couleur
-        position = {                          # Position
-          x = 0;
-          y = 210;
-        };
-      };
-      
-      # Texte de date
-      date = {
-        format = "%A, %d %B %Y";              # Format de date (ex: Lundi, 17 Juin 2025)
-        font_size = 20;                       # Taille de police
-        font_family = "JetBrainsMono Nerd Font"; # Police
-        color = "rgb(200, 200, 200)";         # Couleur
-        position = {                          # Position
-          x = 0;
-          y = 270;
-        };
-      };
-      
-      # Message de déverrouillage
-      label = {
-        text = "$USER";                       # Afficher le nom d'utilisateur
-        color = "rgb(200, 200, 200)";         # Couleur
-        font_size = 25;                       # Taille de police
-        font_family = "JetBrainsMono Nerd Font"; # Police
-        position = {                          # Position
-          x = 0;
-          y = 0;
-        };
-      };
-    };
-  };
+      # Effets visuels sur le fond d'écran
+      blur_passes = 2
+      blur_size = 7
+      noise = 0.0117
+      brightness = 0.8
+      vibrancy = 0.1
+      vibrancy_darkness = 0.0
+    }
+    
+    # Configuration du champ de saisie
+    input-field {
+      size = 200
+      outline_thickness = 3
+      dots_size = 0.33
+      dots_spacing = 0.15
+      dots_center = true
+      outer_color = rgb(151, 151, 151)
+      inner_color = rgb(200, 200, 200)
+      font_color = rgb(10, 10, 10)
+      fade_on_empty = true
+      placeholder_text = <i>Mot de passe...</i>
+      hide_input = false
+      position = 0, -60
+    }
+    
+    # Texte d'horloge
+    clock {
+      format = %H:%M:%S
+      font_size = 45
+      font_family = JetBrainsMono Nerd Font
+      color = rgb(200, 200, 200)
+      position = 0, 210
+    }
+    
+    # Texte de date
+    date {
+      format = %A, %d %B %Y
+      font_size = 20
+      font_family = JetBrainsMono Nerd Font
+      color = rgb(200, 200, 200)
+      position = 0, 270
+    }
+    
+    # Message de déverrouillage
+    label {
+      text = $USER
+      color = rgb(200, 200, 200)
+      font_size = 25
+      font_family = JetBrainsMono Nerd Font
+      position = 0, 0
+    }
+  '';
   
   # S'assurer que les dépendances nécessaires sont installées
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    # Ajout du paquet hyprlock depuis le flake
-    inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # Nous n'installons PAS hyprlock ici car il est déjà installé au niveau système
+    # et provoquerait une collision
   ];
 
   # Configuration de Hyprland pour utiliser Hyprlock au démarrage
