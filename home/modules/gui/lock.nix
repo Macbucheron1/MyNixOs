@@ -65,7 +65,7 @@ let
 
       # Date ➜ rafraîchie toutes les ~10 secondes automatiquement
       {
-        text        = "$DATE";             # Variable spéciale pour la date
+        text        = ''cmd[update:10000] echo "$(date +"%A, %d %B %Y")"'';        
         font_family = font;
         font_size   = 20;
         color       = "rgb(200, 200, 200)";
