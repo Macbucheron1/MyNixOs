@@ -102,7 +102,7 @@ let
         position = "0, 300";                     # Position (centré, vers le bas)
         halign = "center";
         valign = "center";
-      },
+      }
 
       # Date ➜ Utilisation d'une commande pour formater la date
       {
@@ -113,7 +113,7 @@ let
         position = "0, 200";                     # Position au-dessus de l'heure
         halign = "center";
         valign = "center";
-      },
+      }
 
       # Nom d'utilisateur
       {
