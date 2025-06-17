@@ -61,7 +61,7 @@ let
         font_size   = 45;
         color       = "rgb(200, 200, 200)";
         position    = "0, 210";
-      },
+      }
 
       # Date ➜ rafraîchie toutes les ~10 secondes automatiquement
       {
@@ -70,7 +70,7 @@ let
         font_size   = 20;
         color       = "rgb(200, 200, 200)";
         position    = "0, 270";
-      },
+      }
 
       # Nom d'utilisateur
       {
