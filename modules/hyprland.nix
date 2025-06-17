@@ -11,8 +11,13 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     # Allow X11 application to be executed (like firefox)
-    xwayland.enable =  true;
+    xwayland.enable = true;
   };
+  
+  # Installer hyprlock au niveau système
+  environment.systemPackages = with pkgs; [
+    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock
+  ];
 
   services.xserver.enable = false; # assure qu'on ne démarre pas X11
   environment.sessionVariables = {

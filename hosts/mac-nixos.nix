@@ -14,6 +14,7 @@
     ./../modules/hyprland.nix 
     ./../modules/home-manager.nix
     ./../modules/secrets.nix  # Chemin mis à jour vers le module de secrets
+    ./../modules/login-manager.nix  # Nouveau module pour le login automatique avec greetd
   ];
 
   console = {
