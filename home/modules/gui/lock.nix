@@ -56,25 +56,25 @@ let
     label = [
       # Horloge ➜ rafraîchie chaque seconde
       {
-        text        = "{time:%H:%M:%S}";
+        text        = "$TIME";             # Variable spéciale pour l'heure au format HH:MM:SS
         font_family = font;
         font_size   = 45;
         color       = "rgb(200, 200, 200)";
         position    = "0, 210";
-      }
+      },
 
       # Date ➜ rafraîchie toutes les ~10 secondes automatiquement
       {
-        text        = "{date:%A, %d %B %Y}";
+        text        = "$DATE";             # Variable spéciale pour la date
         font_family = font;
         font_size   = 20;
         color       = "rgb(200, 200, 200)";
         position    = "0, 270";
-      }
+      },
 
       # Nom d'utilisateur
       {
-        text        = "$USER";
+        text        = "$USER";             # Variable spéciale pour l'utilisateur actuel
         font_family = font;
         font_size   = 25;
         color       = "rgb(200, 200, 200)";
