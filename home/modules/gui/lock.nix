@@ -78,7 +78,7 @@ let
         font_family = font;
         font_size   = 25;
         color       = "rgb(200, 200, 200)";
-        position    = "0, 0";
+        position    = "0, 50";
       }
     ];
   };
