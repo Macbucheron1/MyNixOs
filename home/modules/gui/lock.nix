@@ -37,7 +37,7 @@ let
     # === Champ de saisie ===
     input-field = [
       {
-        size              = "200, 50";            # Taille du champ en pixels
+        size              = "240, 60";            # Taille du champ en pixels
         outline_thickness = 3;                    # Épaisseur de la bordure
         outline_color     = "rgb(151, 151, 151)"; # Couleur externe
         inner_color       = "rgb(200, 200, 200)"; # Couleur interne
@@ -46,7 +46,7 @@ let
         dots_spacing      = 0.15;                 # Espacement entre les points
         dots_center       = true;                 # Centrer les points
         fade_on_empty     = true;                 # Fondu quand le champ est vide
-        placeholder_text  = "<i>Mot de passe…</i>"; # Texte indicatif
+        placeholder_text  = "<i>Password...</i>"; # Texte indicatif
         hide_input        = false;                # Ne pas masquer la saisie
         position          = "0, -60";             # Position du champ
       }
