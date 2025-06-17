@@ -32,6 +32,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; }; # Transmettre les inputs à Home Manager
           home-manager.users.mac = import ./home/mac.nix;
         }
       ];
