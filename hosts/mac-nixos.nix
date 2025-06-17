@@ -14,7 +14,6 @@
     ./../modules/hyprland.nix 
     ./../modules/home-manager.nix
     ./../modules/secrets.nix  # Chemin mis à jour vers le module de secrets
-    ./../modules/login-manager.nix  # Ajout du gestionnaire de connexion SDDM
   ];
 
   console = {
