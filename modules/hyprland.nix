@@ -14,9 +14,9 @@
     xwayland.enable = true;
   };
   
-  # Installer hyprlock au niveau système
+  # Installer hyprlock depuis le flake dédié
   environment.systemPackages = with pkgs; [
-    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock
+    inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.xserver.enable = false; # assure qu'on ne démarre pas X11

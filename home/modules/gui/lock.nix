@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: 
+{ pkgs, lib, config, inputs, ... }: 
 
 {
   # Activer Hyprlock (verrouillage d'écran pour Hyprland)
@@ -86,9 +86,11 @@
     };
   };
   
-  # S'assurer que la police nécessaire est installée (nouvelle syntaxe)
+  # S'assurer que les dépendances nécessaires sont installées
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    # Ajout du paquet hyprlock depuis le flake
+    inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # Configuration de Hyprland pour utiliser Hyprlock au démarrage
@@ -101,7 +103,7 @@
       
       # Raccourci clavier pour verrouiller l'écran
       bind = [
-        # ... vos autres raccourcis existants ...
+        # Ne pas modifier les raccourcis existants, juste ajouter le nouveau
         "SUPER, L, exec, hyprlock"  # Super+L pour verrouiller l'écran
       ];
     };
