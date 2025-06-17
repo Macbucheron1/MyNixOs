@@ -13,6 +13,7 @@
     ./../modules/nix.nix
     ./../modules/hyprland.nix 
     ./../modules/home-manager.nix
+    ./../modules/secrets.nix  # Chemin mis à jour vers le module de secrets
   ];
 
   console = {
