@@ -8,14 +8,14 @@
     ./../hardware-configuration.nix
 
     # Core modules
-    ./../modules/core/network.nix
-    ./../modules/core/system_packages.nix
-    ./../modules/core/nix.nix
-    ./../modules/core/audio.nix
+    ./../nixos/core/network.nix
+    ./../nixos/core/system_packages.nix
+    ./../nixos/core/nix.nix
+    ./../nixos/core/audio.nix
     
-    ./../modules/user-mac.nix
-    ./../modules/openssh/default.nix
-    ./../modules/hyprland/default.nix
+    ./../nixos/user-mac.nix
+    ./../nixos/openssh/default.nix
+    ./../nixos/hyprland/default.nix
   ];
 
   console = {
