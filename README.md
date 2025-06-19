@@ -55,3 +55,11 @@ sudo nixos-rebuild switch --flake .#Acer-Aspire
   - [x] Alacritty as terminal
 - [ ] Rice `starship` prompt
 - [ ] Rice tf out of this
+
+## Ressources
+
+https://github.com/anotherhadi/nixy
+https://github.com/louis-thevenet/nixos-config/tree/main
+https://github.com/vimjoyer/nixconf/tree/796238ed92b953c77c357aa208f377adae20bf06
+https://gitlab.com/Zaney/zaneyos
+https://github.com/Frost-Phoenix/nixos-config/tree/7e8f3e1761fa01dbaf14183d259e5df8a91dfed8
