@@ -9,13 +9,13 @@
 
     # Core modules
     ./../nixos/core/network.nix
-    ./../nixos/core/system_packages.nix
     ./../nixos/core/nix.nix
     ./../nixos/core/audio.nix
     
     ./../nixos/user-mac.nix
-    ./../nixos/openssh/default.nix
-    ./../nixos/hyprland/default.nix
+    ./../nixos/openssh.nix
+    ./../nixos/hyprland.nix
+    ./../nixos/system_packages.nix
   ];
 
   console = {

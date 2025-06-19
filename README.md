@@ -40,7 +40,7 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 > Needs to be run as `mac`
 
 ```bash
-nixupdate
+sudo nixos-rebuild switch --flake .#Acer-Aspire
 ```
 
 # 🔧 TODO
