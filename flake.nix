@@ -9,13 +9,13 @@
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs: {
-    nixosConfigurations.Acer-Aspire = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.mac-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./hosts/Acer-Aspire.nix
+        ./hosts/mac-nixos.nix
 
         home-manager.nixosModules.home-manager
         {
