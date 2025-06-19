@@ -1,5 +1,5 @@
  {
-  description = "Flake minimal pour Acer-Aspire avec Home Manager";
+  description = "Flake minimal pour mac-nixos avec Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";

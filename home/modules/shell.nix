@@ -11,7 +11,7 @@
 	  return 1;
         else
           echo "✅ Git tree is clean. Proceeding with rebuild...";
-          sudo nixos-rebuild switch --flake /etc/nixos#Acer-Aspire;
+          sudo nixos-rebuild switch --flake /etc/nixos#mac-nixos;
         fi
       '
     '';

@@ -1,4 +1,4 @@
-# 🐧 NixOS Flake Configuration – Acer-Aspire
+# 🐧 NixOS Flake Configuration – mac-nixos
 
 This repository contains my personal and minimalist NixOS configuration, managed with Flakes and Home Manager.
 It's designed to be modular, versioned, and reproducible — ideal for development, pentesting, and customization.
@@ -18,7 +18,7 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 ├── flake.lock # Same but generated so do not touch
 ├── hardware-configuration.nix # Auto generated file that declares disk/boot/hardware setup
 ├── hosts/
-│ └── Acer-Aspire.nix  # system config of the machine. Import system modules
+│ └── mac-nixos.nix  # system config of the machine. Import system modules
 ├── modules/  # NixOs systemm modules
 │ ├── network.nix
 │ ├── nix.nix
