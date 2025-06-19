@@ -8,7 +8,7 @@
     ./../hardware-configuration.nix
     ./../modules/network.nix
     ./../modules/user-mac.nix
-    ./../modules/packages.nix
+    ./../modules/system_ackages.nix
     ./../modules/openssh.nix
     ./../modules/nix.nix
     ./../modules/hyprland.nix

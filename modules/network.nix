@@ -1,4 +1,4 @@
 { config, pkgs, ... }: {
-  networking.hostName = "Mac-NixOs";
+  networking.hostName = "Acer-Aspire";
   networking.networkmanager.enable = true;
 }

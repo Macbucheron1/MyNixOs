@@ -1,5 +1,5 @@
  {
-  description = "Flake minimal pour Mac-NixOS avec Home Manager";
+  description = "Flake minimal pour Acer-Aspire avec Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -9,13 +9,13 @@
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs: {
-    nixosConfigurations.mac-nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.Acer-Aspire = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./hosts/mac-nixos.nix
+        ./hosts/Acer-Aspire.nix
 
         home-manager.nixosModules.home-manager
         {

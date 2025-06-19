@@ -6,5 +6,4 @@
     zsh
   ];
 
-  programs.firefox.enable = true;
 }
