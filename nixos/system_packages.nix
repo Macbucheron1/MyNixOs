@@ -4,6 +4,7 @@
     curl
     git
     zsh
+    xdg-utils  # Provides xdg-open and other XDG utilities
   ];
 
 }

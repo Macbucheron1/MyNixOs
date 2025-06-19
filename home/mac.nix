@@ -14,5 +14,19 @@
     userEmail = "nathandeprat@hotmai.fr";
   };
 
+  # XDG mime applications configuration
+  xdg = {
+    enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = ["thunar.desktop"];
+        "text/html" = ["firefox.desktop"];
+        "x-scheme-handler/http" = ["firefox.desktop"];
+        "x-scheme-handler/https" = ["firefox.desktop"];
+      };
+    };
+  };
+
   home.stateVersion = "25.05";
 }
