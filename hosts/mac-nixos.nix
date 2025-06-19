@@ -6,12 +6,16 @@
 }: {
   imports = [
     ./../hardware-configuration.nix
-    ./../modules/network.nix
+
+    # Core modules
+    ./../modules/core/network.nix
+    ./../modules/core/system_packages.nix
+    ./../modules/core/nix.nix
+    ./../modules/core/audio.nix
+    
     ./../modules/user-mac.nix
-    ./../modules/system_packages.nix
-    ./../modules/openssh.nix
-    ./../modules/nix.nix
-    ./../modules/hyprland.nix
+    ./../modules/openssh/default.nix
+    ./../modules/hyprland/default.nix
   ];
 
   console = {
