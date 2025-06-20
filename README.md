@@ -14,21 +14,27 @@ It's designed to be modular, versioned, and reproducible — ideal for developme
 
 ```shell
 .
-├── flake.nix  # Entry point of the NixOs flake system. Defines inputs and system configuration
-├── flake.lock # Same but generated so do not touch
-├── hardware-configuration.nix # Auto generated file that declares disk/boot/hardware setup
+├── flake.nix  # Entry point of the NixOS flake system. Defines inputs and system configuration
+├── flake.lock # Generated lock file
 ├── hosts/
-│ └── Acer-Aspire.nix  # system config of the machine. Import system modules
-├── modules/  # NixOs systemm modules
-│ ├── network.nix
-│ ├── nix.nix
-│ ├── openssh.nix
-│ ├── packages.nix
-│ └── user-mac.nix
-├── home # Home manager configuration
-│   ├── mac.nix # Configuration for the user mac
-│   └── modules # User specific modules. Since there is only mac there are all for mac
-│       └── shell.nix
+│   └── Acer-Aspire/
+│       ├── default.nix                # System config of the machine
+│       └── hardware-configuration.nix # Hardware setup for the machine
+├── nixos/   # NixOS system modules
+│   ├── core/
+│   │   ├── network.nix
+│   │   ├── nix.nix
+│   │   └── audio.nix
+│   ├── hyprland.nix
+│   ├── openssh.nix
+│   ├── system_packages.nix
+│   └── user-mac.nix
+├── home/    # Home Manager configuration
+│   ├── mac.nix
+│   └── modules/
+│       ├── gui.nix
+│       ├── hyprland_config.nix
+│       └── shell.nix
 └── README.md
 ```
 
