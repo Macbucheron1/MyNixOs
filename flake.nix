@@ -19,14 +19,14 @@
     # Hyprland (flake officiel)
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # Catppuccin : thème complet (GTK, curseurs, Starship…)
-    catppuccin.url = "github:catppuccin/nix";
+    
+    stylix.url        = "github:nix-community/stylix";
   };
 
   ##############################################################################
   # 2. OUTPUTS
   ##############################################################################
-  outputs = { self, nixpkgs, home-manager, hyprland, catppuccin, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, stylix, ... } @ inputs:
   let
     system = "x86_64-linux";
   in
@@ -38,14 +38,11 @@
       inherit system;
 
       # transmet tous les inputs aux modules si besoin
-      specialArgs = { inherit inputs hyprland catppuccin; };
+      specialArgs = { inherit inputs hyprland stylix; };
 
       modules = [
         # ► tes fichiers de machine
         ./hosts/Acer-Aspire
-
-        # ► module NixOS Catppuccin (console, plymouth, etc.)
-        catppuccin.nixosModules.catppuccin
 
         # ► module NixOS fourni par la flake Hyprland
         hyprland.nixosModules.default
@@ -62,28 +59,11 @@
           home-manager.useUserPackages = true;
 
           # passe catppuccin et hyprland aux modules Home-Manager
-          home-manager.extraSpecialArgs = { inherit hyprland catppuccin; };
+          home-manager.extraSpecialArgs = { inherit hyprland stylix; };
 
           # charge ta config utilisateur
           home-manager.users.mac = import ./home/mac.nix;
         }
-      ];
-    };
-
-    ########################################################################
-    # 2-b. (optionnel) Home-Manager autonome
-    ########################################################################
-    # Utile si tu veux déployer *uniquement* la partie HM sur une autre
-    # distribution ou dans un conteneur. Tu peux supprimer ce bloc si tu
-    # n’en as pas besoin.
-    homeConfigurations."mac" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-
-      extraSpecialArgs = { inherit hyprland catppuccin; };
-
-      modules = [
-        ./home/mac.nix
-        catppuccin.homeModules.catppuccin
       ];
     };
   };
