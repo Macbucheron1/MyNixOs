@@ -69,3 +69,4 @@ https://github.com/louis-thevenet/nixos-config/tree/main
 https://github.com/vimjoyer/nixconf/tree/796238ed92b953c77c357aa208f377adae20bf06
 https://gitlab.com/Zaney/zaneyos
 https://github.com/Frost-Phoenix/nixos-config/tree/7e8f3e1761fa01dbaf14183d259e5df8a91dfed8
+https://www.reddit.com/r/NixOS/comments/154tf9g/comment/jsr8lw6/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=1&utm_content=2

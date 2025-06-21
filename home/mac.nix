@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, catppuccin, ... }: {
   home.username = "mac";
   home.homeDirectory = "/home/mac";
 
@@ -6,6 +6,7 @@
     ./modules/shell # Contains Zsh and Starship configuration
     ./modules/alacritty # Contains Alacritty configuration
     ./modules/hyprland
+    catppuccin.homeModules.catppuccin
   ];
 
   programs.git = {
@@ -15,7 +16,7 @@
   };
 
   catppuccin = {
-    flavour = "mocha";
+    flavor = "mocha";
     accent  = "blue";
     enable  = true;
   };
