@@ -34,7 +34,7 @@
     systemd-boot = {
       enable             = true;
       configurationLimit = 5;        # déjà mis chez toi
-      consoleMode        = "auto";   # "max" = résolution max, "0" = 80×25, etc. :contentReference[oaicite:0]{index=0}
+      consoleMode        = "auto";   # "max" = résolution max, "0" = 80×25, etc.
       editor             = false;    # désactive la touche « e » dans le menu
     };
 
